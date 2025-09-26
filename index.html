@@ -3,15 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>10 to Games</title>
+  <title>10 to Games - Premium Landing</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --color-primary: #1a237e;  /* deep blue */
-      --color-accent: #ffca28;   /* bright yellow */
-      --color-bg: #0d0f2a;       /* dark navy */
-      --color-white: #fefefe;
-      --color-secondary: #10e176; /* green accent */
+      --primary-color: #161fff;
+      --secondary-color: #ffde10;
+      --accent-color: #10e176;
+      --background-color: #fff;
+      --text-dark: #191919;
+      --shadow-light: rgba(22, 31, 255, 0.2);
+      --shadow-dark: rgba(10, 10, 10, 0.12);
       --font-heading: 'Montserrat', sans-serif;
       --font-body: 'Open Sans', sans-serif;
     }
@@ -20,200 +22,121 @@
       margin: 0; padding: 0;
     }
     body {
-      background: var(--color-bg);
-      color: var(--color-white);
       font-family: var(--font-body);
+      color: var(--text-dark);
+      background: var(--background-color);
       min-height: 100vh;
       display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    header {
-      width: 100%;
-      padding: 1.5rem 2rem;
-      text-align: center;
-      background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
-      font-family: var(--font-heading);
-      font-weight: 700;
-      font-size: 1.8rem;
-      letter-spacing: 0.15em;
-      color: var(--color-white);
-      user-select: none;
-      box-shadow: 0 3px 10px rgba(255, 202, 40, 0.5);
-      text-transform: uppercase;
-    }
-    main {
-      width: 100%;
-      max-width: 1200px;
-      margin: 3rem auto 5rem auto;
-      padding: 0 1rem;
-    }
-    .hero {
-      position: relative;
-      background: linear-gradient(135deg, #1a237e, #10e176);
-      border-radius: 1rem;
-      margin-bottom: 3rem;
-      overflow: hidden;
-      color: var(--color-white);
-      display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
-      min-height: 360px;
-      text-align: center;
-      box-shadow: 0 12px 48px rgba(16, 225, 118, 0.5);
-      padding: 2.5rem 1rem;
+      padding: 2rem;
     }
-    .hero h1 {
+    main {
+      max-width: 1080px;
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 3rem;
+    }
+    .hero-image {
+      flex: 1 1 400px;
+      max-width: 420px;
+      filter: drop-shadow(0 14px 18px var(--shadow-light));
+      border-radius: 1rem;
+      transition: transform 0.3s ease;
+    }
+    .hero-image:hover {
+      transform: scale(1.05);
+      filter: drop-shadow(0 20px 28px var(--shadow-dark));
+      cursor: pointer;
+    }
+    .content {
+      flex: 1 1 480px;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      justify-content: center;
+    }
+    h1 {
       font-family: var(--font-heading);
-      font-size: 3.8rem;
-      letter-spacing: 0.18em;
-      margin-bottom: 0.5rem;
-      text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+      font-weight: 700;
+      font-size: 3rem;
+      letter-spacing: 0.1em;
+      color: var(--primary-color);
+      line-height: 1.15;
     }
-    .hero p {
-      font-size: 1.25rem;
-      max-width: 480px;
-      margin-bottom: 2rem;
-      font-weight: 600;
-      text-shadow: 0 2px 6px rgba(0,0,0,0.35);
+    p {
+      font-size: 1.3rem;
+      line-height: 1.5;
+      color: var(--text-dark);
+      max-width: 380px;
     }
     .btn-cta {
-      background: linear-gradient(90deg, var(--color-accent), var(--color-secondary));
-      color: var(--color-bg);
+      margin-top: 2rem;
+      background: linear-gradient(90deg, var(--accent-color), var(--secondary-color));
+      color: var(--text-dark);
       font-family: var(--font-heading);
       font-weight: 700;
-      font-size: 1.3rem;
+      font-size: 1.15rem;
       padding: 1rem 3rem;
-      border: none;
       border-radius: 3rem;
+      border: none;
+      box-shadow: 0 8px 22px rgba(16, 225, 118, 0.65);
       cursor: pointer;
-      box-shadow: 0 6px 25px rgba(255, 202, 40, 0.6);
-      transition: all 0.3s ease;
+      transition: all 0.25s ease;
       text-transform: uppercase;
       user-select: none;
-      text-decoration: none;
-      display: inline-block;
-    }
-    .btn-cta:hover,
-    .btn-cta:focus {
-      background: linear-gradient(90deg, var(--color-secondary), var(--color-accent));
-      box-shadow: 0 10px 36px rgba(16, 225, 118, 0.8);
-      transform: scale(1.06);
-      outline: none;
-    }
-    .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 2.75rem;
-      margin-top: 2rem;
-    }
-    .feature-card {
-      background: var(--color-bg);
-      border-radius: 1rem;
-      box-shadow: 0 4px 24px rgba(0,0,0,0.55);
-      padding: 2rem 1.5rem;
-      color: var(--color-white);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      cursor: default;
-      user-select: none;
+      max-width: 280px;
       text-align: center;
     }
-    .feature-card:hover {
-      box-shadow: 0 14px 34px rgba(16, 225, 118, 0.85);
-      transform: translateY(-10px);
-    }
-    .feature-icon {
-      font-size: 3.5rem;
-      color: var(--color-accent);
-      margin-bottom: 1.25rem;
-    }
-    .feature-title {
-      font-family: var(--font-heading);
-      font-weight: 700;
-      font-size: 1.5rem;
-      margin-bottom: 0.4rem;
-      letter-spacing: 0.05em;
-    }
-    .feature-desc {
-      font-size: 1.1rem;
-      line-height: 1.5;
-      color: #c1c1c1;
+    .btn-cta:hover {
+      box-shadow: 0 12px 28px rgba(255, 222, 16, 0.85);
+      background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+      transform: scale(1.05);
+      outline: none;
     }
     footer {
       width: 100%;
-      background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
-      padding: 1.5rem 2rem;
-      color: var(--color-white);
+      margin-top: 5rem;
+      font-family: var(--font-body);
+      font-size: 0.85rem;
       text-align: center;
-      font-size: 0.9rem;
+      color: #999;
       user-select: none;
     }
-    .footer-social {
-      margin-top: 0.8rem;
-    }
-    .footer-social a {
-      color: var(--color-white);
-      margin: 0 0.6rem;
-      font-size: 1.4rem;
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-    .footer-social a:hover {
-      color: var(--color-accent);
-    }
-    @media (max-width: 600px) {
-      .hero h1 {
-        font-size: 2.6rem;
+    @media (max-width: 800px) {
+      main {
+        flex-direction: column;
+        align-items: center;
       }
-      .btn-cta {
-        font-size: 1.1rem;
-        padding: 0.9rem 2.5rem;
+      .content {
+        max-width: 90vw;
+        text-align: center;
       }
-      .features {
-        gap: 2rem;
+      h1 {
+        font-size: 2.5rem;
+      }
+      p {
+        max-width: 100%;
+      }
+      .hero-image {
+        max-width: 320px;
       }
     }
   </style>
 </head>
 <body>
-  <header>10 TO GAMES</header>
   <main>
-    <section class="hero" role="banner" aria-label="10 to Games Landing">
-      <h1>Play Loud, Give Proud</h1>
-      <p>Join The 10 To Club for exclusive 10% discounts at local partners, merch deals, and support our charity commitments.</p>
-      <a href="#join" class="btn-cta" role="button" tabindex="0">Become a Member</a>
-    </section>
-    <section class="features" aria-label="Features">
-      <article class="feature-card" tabindex="0">
-        <div class="feature-icon" aria-hidden="true">🥂</div>
-        <div class="feature-title">Signature Drinking Games</div>
-        <div class="feature-desc">Fast-paced, social, and perfect for any group size.</div>
-      </article>
-      <article class="feature-card" tabindex="0">
-        <div class="feature-icon" aria-hidden="true">🏆</div>
-        <div class="feature-title">Partner Discounts</div>
-        <div class="feature-desc">Get 10% off at local venues and exclusive events.</div>
-      </article>
-      <article class="feature-card" tabindex="0">
-        <div class="feature-icon" aria-hidden="true">❤️</div>
-        <div class="feature-title">Charity Commitment</div>
-        <div class="feature-desc">We donate 10% of profits annually to community causes.</div>
-      </article>
-      <article class="feature-card" tabindex="0">
-        <div class="feature-icon" aria-hidden="true">🎲</div>
-        <div class="feature-title">Community Game Nights</div>
-        <div class="feature-desc">Join drop-ins and tournaments across the GTA.</div>
-      </article>
-    </section>
-  </main>
-  <footer role="contentinfo">
-    &copy; 2025 10 to Games | Play Loud, Give Proud<br />
-    <div class="footer-social" aria-label="Social media links">
-      <a href="#" aria-label="Instagram" title="Instagram">📸</a>
-      <a href="#" aria-label="Facebook" title="Facebook">👍</a>
-      <a href="#" aria-label="Twitter" title="Twitter">🐦</a>
+    <img src="box-10togqames.jpg" alt="10 to Games Product Box" class="hero-image" />
+    <div class="content">
+      <h1>10 To Games</h1>
+      <p>Experience the thrill of the #1 countdown card game with 10 To Toast. Fast-paced, social, and designed for unforgettable nights.</p>
+      <button class="btn-cta" onclick="window.location='#join'">Join The 10 To Club</button>
     </div>
+  </main>
+  <footer>
+    &copy; 2025 10 to Games | Play Loud • Give Proud | Designed with ❤️ in Toronto
   </footer>
 </body>
 </html>

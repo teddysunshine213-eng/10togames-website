@@ -27,7 +27,7 @@
       background: var(--background-color);
       min-height: 100vh;
       display: flex;
-      justify-content: center;
+      flex-direction: column;
       align-items: center;
       padding: 2rem;
     }
@@ -36,7 +36,7 @@
       width: 100%;
       display: flex;
       flex-wrap: wrap;
-      align-items: center;
+      justify-content: center;
       gap: 3rem;
     }
     .hero-image {
@@ -45,11 +45,11 @@
       filter: drop-shadow(0 14px 18px var(--shadow-light));
       border-radius: 1rem;
       transition: transform 0.3s ease;
+      cursor: pointer;
     }
     .hero-image:hover {
       transform: scale(1.05);
       filter: drop-shadow(0 20px 28px var(--shadow-dark));
-      cursor: pointer;
     }
     .content {
       flex: 1 1 480px;
@@ -57,6 +57,7 @@
       flex-direction: column;
       gap: 1.25rem;
       justify-content: center;
+      max-width: 480px;
     }
     h1 {
       font-family: var(--font-heading);
@@ -70,7 +71,6 @@
       font-size: 1.3rem;
       line-height: 1.5;
       color: var(--text-dark);
-      max-width: 380px;
     }
     .btn-cta {
       margin-top: 2rem;
@@ -96,6 +96,30 @@
       transform: scale(1.05);
       outline: none;
     }
+    .cardback-section {
+      width: 100%;
+      margin-top: 5rem;
+      text-align: center;
+    }
+    .cardback-section h2 {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+      color: var(--primary-color);
+    }
+    .cardback-image {
+      max-width: 520px;
+      width: 90%;
+      border-radius: 1rem;
+      filter: drop-shadow(0 8px 22px rgba(16, 225, 118, 0.4));
+      transition: transform 0.35s ease;
+      cursor: pointer;
+    }
+    .cardback-image:hover {
+      transform: scale(1.03);
+      filter: drop-shadow(0 12px 30px rgba(16, 225, 118, 0.7));
+    }
     footer {
       width: 100%;
       margin-top: 5rem;
@@ -117,11 +141,14 @@
       h1 {
         font-size: 2.5rem;
       }
-      p {
-        max-width: 100%;
-      }
       .hero-image {
         max-width: 320px;
+      }
+      .cardback-section h2 {
+        font-size: 2rem;
+      }
+      .cardback-image {
+        max-width: 300px;
       }
     }
   </style>
@@ -135,6 +162,12 @@
       <button class="btn-cta" onclick="window.location='#join'">Join The 10 To Club</button>
     </div>
   </main>
+
+  <section class="cardback-section" aria-label="Card Back Design">
+    <h2>Exclusive Card Back Design</h2>
+    <img src="ChatGPT-Image-Sep-19-2025-at-09_57_06-PM.jpg" alt="10 to Games Card Back Design" class="cardback-image" />
+  </section>
+
   <footer>
     &copy; 2025 10 to Games | Play Loud • Give Proud | Designed with ❤️ in Toronto
   </footer>

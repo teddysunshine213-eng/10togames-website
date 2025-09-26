@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>10 to Games - Premium Landing</title>
+  <title>10 to Games - Premium White Theme</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&display=swap" rel="stylesheet" />
   <style>
     :root {
+      --black: #000;
+      --white: #fff;
+      --gray-light: #eee;
+      --gray-medium: #999;
       --primary-color: #161fff;
-      --secondary-color: #ffde10;
-      --accent-color: #10e176;
-      --background-color: #fff;
-      --text-dark: #191919;
-      --shadow-light: rgba(22, 31, 255, 0.2);
-      --shadow-dark: rgba(10, 10, 10, 0.12);
+      --accent-color: #ffde10;
+      --card-shadow: rgba(0,0,0,0.15);
       --font-heading: 'Montserrat', sans-serif;
       --font-body: 'Open Sans', sans-serif;
     }
@@ -23,153 +23,184 @@
     }
     body {
       font-family: var(--font-body);
-      color: var(--text-dark);
-      background: var(--background-color);
+      background: var(--white);
+      color: var(--black);
       min-height: 100vh;
+      padding: 3rem 2rem 5rem 2rem;
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 2rem;
     }
     main {
-      max-width: 1080px;
+      max-width: 1100px;
       width: 100%;
+    }
+    header {
+      margin-bottom: 3rem;
+      text-align: center;
+    }
+    header h1 {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 3.5rem;
+      letter-spacing: 0.07em;
+      margin-bottom: 0.25rem;
+    }
+    header p {
+      font-size: 1.25rem;
+      color: var(--gray-medium);
+      margin-bottom: 2rem;
+      font-weight: 600;
+    }
+    .btn-black {
+      background: var(--black);
+      color: var(--white);
+      border: none;
+      border-radius: 64px;
+      padding: 1.15rem 3.5rem;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 1.15rem;
+      cursor: pointer;
+      transition: background 0.2s ease;
+      display: inline-block;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      text-decoration: none;
+      margin-top: 1.5rem;
+    }
+    .btn-black:hover {
+      background: #333;
+    }
+    .hero {
       display: flex;
       flex-wrap: wrap;
-      justify-content: center;
       gap: 3rem;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 5rem;
     }
     .hero-image {
       flex: 1 1 400px;
       max-width: 420px;
-      filter: drop-shadow(0 14px 18px var(--shadow-light));
-      border-radius: 1rem;
+      border-radius: 12px;
+      box-shadow: 0 16px 48px var(--card-shadow);
       transition: transform 0.3s ease;
       cursor: pointer;
     }
     .hero-image:hover {
-      transform: scale(1.05);
-      filter: drop-shadow(0 20px 28px var(--shadow-dark));
+      transform: scale(1.04);
     }
-    .content {
+    .hero-content {
       flex: 1 1 480px;
-      display: flex;
-      flex-direction: column;
-      gap: 1.25rem;
-      justify-content: center;
-      max-width: 480px;
+      max-width: 540px;
+      font-family: var(--font-body);
     }
-    h1 {
+    .hero-content h2 {
       font-family: var(--font-heading);
       font-weight: 700;
-      font-size: 3rem;
-      letter-spacing: 0.1em;
-      color: var(--primary-color);
-      line-height: 1.15;
+      font-size: 2.75rem;
+      margin-bottom: 1rem;
+      letter-spacing: 0.045em;
     }
-    p {
-      font-size: 1.3rem;
+    .hero-content p {
+      font-size: 1.2rem;
       line-height: 1.5;
-      color: var(--text-dark);
+      color: var(--black);
+      font-weight: 600;
     }
-    .btn-cta {
-      margin-top: 2rem;
-      background: linear-gradient(90deg, var(--accent-color), var(--secondary-color));
-      color: var(--text-dark);
-      font-family: var(--font-heading);
-      font-weight: 700;
-      font-size: 1.15rem;
-      padding: 1rem 3rem;
-      border-radius: 3rem;
-      border: none;
-      box-shadow: 0 8px 22px rgba(16, 225, 118, 0.65);
-      cursor: pointer;
-      transition: all 0.25s ease;
-      text-transform: uppercase;
-      user-select: none;
-      max-width: 280px;
+    section.cards-section {
+      margin-top: 3rem;
       text-align: center;
     }
-    .btn-cta:hover {
-      box-shadow: 0 12px 28px rgba(255, 222, 16, 0.85);
-      background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
-      transform: scale(1.05);
-      outline: none;
-    }
-    .cardback-section {
-      width: 100%;
-      margin-top: 5rem;
-      text-align: center;
-    }
-    .cardback-section h2 {
+    section.cards-section h3 {
       font-family: var(--font-heading);
       font-weight: 700;
       font-size: 2.5rem;
-      margin-bottom: 1.5rem;
-      color: var(--primary-color);
+      margin-bottom: 2rem;
+      color: var(--black);
     }
-    .cardback-image {
-      max-width: 520px;
-      width: 90%;
+    .cards-grid {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+    .card {
+      background: var(--accent-color);
+      color: var(--black);
+      border-radius: 24px;
+      padding: 1.5rem 2rem;
+      min-width: 220px;
+      max-width: 220px;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 1.25rem;
+      box-shadow: 0 8px 30px rgba(255, 222, 16, 0.3);
+      cursor: default;
+      user-select: none;
+      transition: transform 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-10px) scale(1.05);
+      box-shadow: 0 16px 48px rgba(255, 222, 16, 0.5);
+    }
+    .card img {
       border-radius: 1rem;
-      filter: drop-shadow(0 8px 22px rgba(16, 225, 118, 0.4));
-      transition: transform 0.35s ease;
-      cursor: pointer;
-    }
-    .cardback-image:hover {
-      transform: scale(1.03);
-      filter: drop-shadow(0 12px 30px rgba(16, 225, 118, 0.7));
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 1rem;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.1);
     }
     footer {
+      max-width: 1100px;
       width: 100%;
-      margin-top: 5rem;
-      font-family: var(--font-body);
-      font-size: 0.85rem;
+      margin-top: 6rem;
+      padding: 2rem 0;
       text-align: center;
-      color: #999;
+      color: var(--gray-medium);
       user-select: none;
+      font-size: 0.85rem;
+      font-family: var(--font-body);
     }
-    @media (max-width: 800px) {
-      main {
+    @media (max-width: 850px) {
+      .hero {
         flex-direction: column;
-        align-items: center;
-      }
-      .content {
-        max-width: 90vw;
-        text-align: center;
-      }
-      h1 {
-        font-size: 2.5rem;
-      }
-      .hero-image {
-        max-width: 320px;
-      }
-      .cardback-section h2 {
-        font-size: 2rem;
-      }
-      .cardback-image {
-        max-width: 300px;
+        gap: 2.5rem;
       }
     }
   </style>
 </head>
 <body>
   <main>
-    <img src="box-10togqames.jpg" alt="10 to Games Product Box" class="hero-image" />
-    <div class="content">
+    <header>
       <h1>10 To Games</h1>
-      <p>Experience the thrill of the #1 countdown card game with 10 To Toast. Fast-paced, social, and designed for unforgettable nights.</p>
-      <button class="btn-cta" onclick="window.location='#join'">Join The 10 To Club</button>
-    </div>
+      <p>Play loud, give proud. The #1 countdown card game.</p>
+      <a href="#join" class="btn-black">Join The 10 To Club</a>
+    </header>
+
+    <section class="hero">
+      <img src="box-10togqames.jpg" alt="10 to Games product box" class="hero-image" />
+      <div class="hero-content">
+        <h2>Welcome to 10 To Games</h2>
+        <p>Discover the fun and fast-paced countdown card game made for game nights, parties, and unforgettable moments with friends and family. Join The 10 To Club today for exclusive discounts and giveaways!</p>
+        <a href="#join" class="btn-black">Get Started</a>
+      </div>
+    </section>
+
+    <section class="cards-section">
+      <h3>Premium Card Back Design</h3>
+      <div class="cards-grid">
+        <img src="ChatGPT-Image-Sep-19-2025-at-09_57_06-PM.jpg" alt="10 to Games card back design" class="card" style="box-shadow: none; padding: 0; background: none; font-size: initial; font-weight: normal;" />
+        <div class="card">Play Anywhere, Anytime<br />Portable & Durable</div>
+        <div class="card">Exclusive Discounts & Events<br />For Club Members</div>
+        <div class="card">Supporting Local Charities<br />10% of Profits Donated</div>
+      </div>
+    </section>
   </main>
 
-  <section class="cardback-section" aria-label="Card Back Design">
-    <h2>Exclusive Card Back Design</h2>
-    <img src="ChatGPT-Image-Sep-19-2025-at-09_57_06-PM.jpg" alt="10 to Games Card Back Design" class="cardback-image" />
-  </section>
-
   <footer>
-    &copy; 2025 10 to Games | Play Loud • Give Proud | Designed with ❤️ in Toronto
+    &copy; 2025 10 To Games — Your play, your way. Designed with ♥ in Toronto.
   </footer>
 </body>
 </html>
